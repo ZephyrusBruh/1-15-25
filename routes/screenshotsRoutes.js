@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const platformController = require("../controllers/platformController");
+const ScreenshotControllers = require("../controllers/ScreenshotControllers");
 
 /**
  * @swagger
- * /api/platforms:
+ * /api/screenshots:
  *   get:
  *     tags:
- *         - platforms
- *     summary: Get all platforms (default to limit of 50)
+ *         - screenshots
+ *     summary: Get all screenshots (default to limit of 50)
  *     parameters:
  *         - in: query
  *           name: start
@@ -18,25 +18,26 @@ const platformController = require("../controllers/platformController");
  *           name: gameid
  *     responses:
  *       200:
- *         description: A list of platforms
+ *         description: A list of screenshots
  */
 
-router.get("/", platformController.getAllPlatforms);
+router.get("/", ScreenshotControllers.getAllScreenshots);
+
 
 /**
  * @swagger
- * /api/platforms/{id}:
+ * /api/screenshots/{id}:
  *   get:
  *     tags:
- *       - platforms
+ *       - screenshots
  *     summary: Get a game by its id
  *     parameters:
  *       - in: path
  *         name: id
  *     responses:
  *       200:
- *         description: A specific platforms
+ *         description: A specific screenshots
  */
-router.get("/:id", platformController.getPlatformsById);
+router.get("/:id", ScreenshotControllers.getScreenshotsById);
 
 module.exports = router; 

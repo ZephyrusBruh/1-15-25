@@ -1,16 +1,18 @@
 const db = require("../config/db");
 
-async function getAllPlatforms(start=0,limit=50,like){
+async function getAllPlatforms(start=0,limit=50,gameId){
     let where="";
+    let join = "";
     let params = [];
-    if(like){
-        where="where name like concat('%',?,'%')";
-        params.push(like);
+    if(gameId){
+        join = "inner join game_platform gp on p.platform_id = gp.platform_id";
+        where=" where gp.game_id = ?";
+        params.push(gameId);
     }
     params.push(start.toString());
     params.push(limit.toString());
 
-    const [rows] = await db.execute(`Select * from platforms ${where} limit ?,?`, params);
+    const [rows] = await db.execute(`Select p.* from platforms p ${join} ${where} limit ?,?`, params);
     return rows;
 }
 
