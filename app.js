@@ -8,10 +8,14 @@ const app = express();
 const gamesRoutes = require("./routes/gamesRoutes.js");
 const platformsRoutes = require("./routes/platformsRoutes.js");
 const screenshotsRoutes = require("./routes/screenshotsRoutes.js");
+const charactersRoutes = require("./routes/charactersRoutes.js");
+const genresRoutes = require("./routes/genresRoutes.js");
 
 app.use("/api/games", gamesRoutes);
 app.use("/api/platforms", platformsRoutes);
 app.use("/api/screenshots", screenshotsRoutes);
+app.use("/api/characters", charactersRoutes);
+app.use("/api/genres", genresRoutes);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 app.listen(PORT, () => {
