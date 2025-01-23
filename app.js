@@ -12,6 +12,8 @@ const charactersRoutes = require("./routes/charactersRoutes.js");
 const genresRoutes = require("./routes/genresRoutes.js");
 const game_modeRoutes = require("./routes/game_modeRoutes.js");
 const websitesRoutes = require("./routes/websitesRoutes.js")
+const similarRoutes = require("./routes/similarRoutes.js")
+const coversRoutes = require("./routes/coversRoutes.js")
 
 app.use("/api/games", gamesRoutes);
 app.use("/api/platforms", platformsRoutes);
@@ -20,6 +22,8 @@ app.use("/api/characters", charactersRoutes);
 app.use("/api/genres", genresRoutes);
 app.use("/api/game_modes", game_modeRoutes);
 app.use("/api/websites", websitesRoutes);
+app.use("/api/similar", similarRoutes);
+app.use("/api/covers", coversRoutes);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 app.listen(PORT, () => {
