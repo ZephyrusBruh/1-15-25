@@ -1,4 +1,4 @@
-const Platform = require("../models/platform");
+const Platform = require("../../models/platform");
 
 async function getAllPlatforms(req,res) {
     try{

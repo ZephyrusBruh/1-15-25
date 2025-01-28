@@ -13,7 +13,7 @@ const genresRoutes = require("./routes/genresRoutes.js");
 const game_modeRoutes = require("./routes/game_modeRoutes.js");
 const websitesRoutes = require("./routes/websitesRoutes.js")
 const similarRoutes = require("./routes/similarRoutes.js")
-const coversRoutes = require("./routes/coversRoutes.js")
+const coversRoutes = require("./routes/api/coversRoutes.js")
 
 app.use("/api/games", gamesRoutes);
 app.use("/api/platforms", platformsRoutes);

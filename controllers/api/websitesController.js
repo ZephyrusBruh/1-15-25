@@ -1,4 +1,4 @@
-const Websites = require("../models/websites");
+const Websites = require("../../models/websites");
 
 async function getAllWebsites(req,res) {
     try{

@@ -1,4 +1,4 @@
-const Genre = require("../models/genres");
+const Genre = require("../../models/genres");
 
 async function getAllGenres(req,res) {
     try{
