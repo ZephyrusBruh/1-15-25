@@ -1,4 +1,4 @@
-const Covers = require("../models/covers");
+const Covers = require("../../models/covers");
 
 async function getAllCovers(req,res) {
     try{

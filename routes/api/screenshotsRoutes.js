@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const ScreenshotControllers = require("../controllers/ScreenshotControllers");
+const ScreenshotControllers = require("../../controllers/api/ScreenshotControllers");
 
 /**
  * @swagger
