@@ -28,7 +28,7 @@ app.use("/api/similar", similarRoutes);
 app.use("/api/covers", coversRoutes);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
-const homeRoute = require("./routes/views/homeRoutes");
+const homeRoute = require("./routes/views/webPageRoutes.js");
 app.use("/", homeRoute);
 app.use(express.static(__dirname + "/public"))
 
