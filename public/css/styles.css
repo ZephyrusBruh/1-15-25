@@ -69,14 +69,6 @@ body{
     100% { transform: rotate(360deg); }
 }
 
-#gameCharacters{
-    display: flex;
-    flex-wrap: wrap;
-}
-#gameCharacters button {
-    flex: 1 0 20%;
-    margin: 5px;
-}
 .container >.row >div> div{
     background-color: white;
     border-radius: 5px;

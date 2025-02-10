@@ -10,12 +10,20 @@ async function renderGamePage(req, res) {
   const gameModes= await getGameData(req.params.id,"game_modes");
   const platforms= await getGameData(req.params.id,"platforms");
   const characters= await getGameData(req.params.id,"characters");
+  const websites= await getGameData(req.params.id,"websites");
+  const screenshots= await getGameData(req.params.id,"screenshots");
+  const similarGames= await getGameData(req.params.id,"similar");
+
   data.cover = cover[0] ? cover[0].url : "";
   data.genres = genres;
   data.gameModes = gameModes;
   data.platforms = platforms;
   data.characters = characters;
-  console.log(data)
+  //console.log(data.characters);
+  data.websites = websites;
+  data.screenshots=screenshots;
+  data.similarGames=similarGames;
+  console.log(data);
   res.render("game", {
     title: "CMP IDGB " + data.name,
     gameData: data
